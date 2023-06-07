@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import getVideoStream from './utils/getVideoStream';
 import loadModels from './utils/loadModels';
 import * as faceapi from 'face-api.js';
@@ -7,6 +7,7 @@ function App() {
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const isLoaded = useRef(false);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const displaySize: { width: number; height: number } = {
@@ -36,6 +37,7 @@ function App() {
 			});
 
 			isLoaded.current = true;
+			setLoading(false);
 		};
 
 		const loop = async () => {
@@ -79,6 +81,8 @@ function App() {
 				<video ref={videoRef} autoPlay muted></video>
 				<canvas ref={canvasRef}></canvas>
 			</div>
+
+			{loading && <p className='loading'>Loading models...</p>}
 		</div>
 	);
 }
