@@ -8,7 +8,8 @@
 		"build": "tsc && vite build",
 		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"face-api.js": "^0.22.2",
@@ -26,6 +27,7 @@
 		"eslint-plugin-react-refresh": "^0.4.1",
 		"prettier": "^2.8.8",
 		"typescript": "^5.0.2",
-		"vite": "^4.3.9"
+		"vite": "^4.3.9",
+		"husky": "^8.0.0"
 	}
 }

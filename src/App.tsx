@@ -59,7 +59,7 @@ function App() {
 				detections,
 				displaySize,
 			);
-			// faceapi.draw.drawDetections(canvasRef.current, resizedDetections);
+			faceapi.draw.drawDetections(canvasRef.current, resizedDetections);
 			faceapi.draw.drawFaceLandmarks(
 				canvasRef.current,
 				resizedDetections,
